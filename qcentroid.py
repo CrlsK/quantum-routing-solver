@@ -7,7 +7,7 @@ to solve the stochastic VRP using quantum-inspired variational techniques.
 Core techniques:
 1. Problem encoding as Quadratic Unconstrained Binary Optimisation (QUBO)
 2. Quantum-inspired annealing via Simulated Quantum Annealing (SQA) with
-   transverse-field Ising model simulation
+   transverse-field Ising model simulatio
 3. Quantum kernel feature maps for uncertainty-aware cost estimation
 4. Variational parameter optimisation with gradient-free COBYLA
 
@@ -384,7 +384,7 @@ def run(input_data: dict, solver_params: dict, extra_arguments: dict) -> dict:
 
     vehicles = [
         Vehicle(v["id"], v.get("capacity", 100.0), v.get("speed_kmh", 50.0))
-        for c in input_data.get("vehicles", [])
+        for v in input_data.get("vehicles", [])
     ]
     if not vehicles:
         vehicles = [Vehicle("V1", 100.0), Vehicle("V2", 100.0)]
