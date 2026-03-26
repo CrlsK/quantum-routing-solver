@@ -1,7 +1,1 @@
-# Quantum-Inspired Routing Solver
-# No external dependencies â uses Python standard library only
-# Quantum-inspired algorithms implemented from scratch using math, random, copy
-# (No qiskit/cirq needed â pure classical simulation of quantum structures)
-# For actual quantum hardware execution, install:
-#   qiskit>=1.0.0
-#   dwave-ocean-sdk>=6.0.0
+numpy>=1.24.0
