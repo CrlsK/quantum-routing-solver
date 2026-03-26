@@ -5,6 +5,7 @@ import time
 import logging
 from typing import List, Dict, Optional
 
+from visualization import generate_visualizations
 import numpy as np
 
 logger = logging.getLogger("qcentroid-user-log")
@@ -405,7 +406,7 @@ def run(input_data: dict, solver_params: dict, extra_arguments: dict) -> dict:
                 f"cost: {total_cost_minutes:.2f} min / {total_cost_km:.2f} km, "
                 f"elapsed: {elapsed}s, on_time: {on_time_prob:.1%}")
 
-    return {
+    _result = {
         # Core routing output
         "routes": routes_output,
         "total_vehicles_used": len(routes_output),
@@ -457,3 +458,5 @@ def run(input_data: dict, solver_params: dict, extra_arguments: dict) -> dict:
             "energy_consumption": 0.0,
         },
     }
+    generate_visualizations(input_data, _result)
+    return _result
